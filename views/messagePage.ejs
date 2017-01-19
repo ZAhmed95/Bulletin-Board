@@ -8,9 +8,30 @@
     <form class="" action="write" method="get">
       <input type="submit" name="writeMessage" value="write a message"></button>
     </form>
+    <style>
+      .message{
+        border-style: solid;
+        border-width: medium;
+        margin: 10px;
+        width: 800px;
+      }
+
+      .message .title{
+        border-style: solid;
+        border-width: 0px 0px 2px 0px;
+        width: 90%;
+        margin-left: 10px;
+      }
+
+      .message .body{
+        margin-left: 10px;
+      }
+    </style>
     <% for(var i = 0; i < rows.length; i++){%>
-      <h4><%= rows[i].title %></h4>
-      <p><%= rows[i].body %></p>
+      <div class="message">
+        <h4 class="title"><%= rows[i].title %></h4>
+        <p class="body"><%= rows[i].body %></p>
+      </div>
     <%} %>
   </body>
 </html>
