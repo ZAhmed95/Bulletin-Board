@@ -28,7 +28,7 @@
       }
     </style>
     <% for(var i = 0; i < rows.length; i++){%>
-      <div class="message">
+      <div class="message" id=<%= "m" + rows[i].id %>>
         <h4 class="title"><%= rows[i].title %></h4>
         <p class="body"><%= rows[i].body %></p>
       </div>

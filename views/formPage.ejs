@@ -14,5 +14,14 @@
       <br>
       <input type="submit" name="submit">
     </form>
+
+    <div class="messageList">
+      <h1>Message Log:</h1>
+      <ul>
+        <% for (var i = 0; i < rows.length; i++){ %>
+          <li><a href=<%="/messages/#m" + rows[i].id%>><%= rows[i].title %></a></li>
+        <% } %>
+      </ul>
+    </div>
   </body>
 </html>

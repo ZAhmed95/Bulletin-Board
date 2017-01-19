@@ -6,12 +6,23 @@ app.set('view engine', 'ejs');
 app.use(bodyParser());
 
 var pg = require('pg');
+var connectionString = "postgres://" + process.env.POSTGRES_USER + ':' + process.env.POSTGRES_PASSWORD + '@localhost/bulletinboard';
 
 app.get('/', function(req,res){
-  res.render('formPage');
+  pg.connect(connectionString, function(err,client,done){
+    if (err){
+      return console.log("errorConnecting");
+    }
+    client.query('select * from messages', function(err, result){
+      if (err){
+        return console.log("errorGettingMessages");
+      }
+      res.render("formPage", result);
+      done();
+      pg.end();
+    });
+  });
 });
-
-var connectionString = "postgres://" + process.env.POSTGRES_USER + ':' + process.env.POSTGRES_PASSWORD + '@localhost/bulletinboard';
 
 app.get('/messages', function(req,res){
   pg.connect(connectionString, function(err,client,done){
