@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Messages</title>
+  </head>
+  <body>
+    <form class="" action="write" method="get">
+      <input type="submit" name="writeMessage" value="write a message"></button>
+    </form>
+    <% for(var i = 0; i < rows.length; i++){%>
+      <h4><%= rows[i].title %></h4>
+      <p><%= rows[i].body %></p>
+    <%} %>
+  </body>
+</html>
