@@ -53,7 +53,7 @@ app.post('/write', function(req,res){
       if (err){
         return console.log("errorWriting");
       }
-      res.redirect("/messages");
+      res.redirect("/messages/#bottom");
     });
   });
 });

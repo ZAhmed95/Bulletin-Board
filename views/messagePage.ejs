@@ -5,8 +5,8 @@
     <title>Messages</title>
   </head>
   <body>
-    <form class="" action="write" method="get">
-      <input type="submit" name="writeMessage" value="write a message"></button>
+    <form class="" action="/write" method="get" id="top">
+      <input type="submit" name="writeMessage" value="post a message"></button>
     </form>
     <style>
       .message{
@@ -33,5 +33,6 @@
         <p class="body"><%= rows[i].body %></p>
       </div>
     <%} %>
+    <a href="#top" id="bottom">Back to top</a>
   </body>
 </html>
